@@ -86,7 +86,6 @@ class Fichas {
         this.elemento.style.background = this.color;
     }
 }
-
 class Juego {
     constructor(cantidadFichas) {
 
