@@ -3,7 +3,6 @@ var espacioMovimientos = document.getElementById("movimientos")
 var fichas = new Array()
 const cantidadFichas = 5;
 
-
 //Clase de juego
 
 //Clase contenedores
@@ -145,17 +144,30 @@ class Juego {
         this.right.limpiar()
     }
 }
-function cambiarDiscos(discos = null){        
+
+function cambiarDiscos(discos = null){
     if(!discos){
         discos = prompt("Nuevo número de discos (3 - 8)")
         if(discos >= 3 && discos <= 8){
             j.limpiar()
-            j = new Juego(discos) 
-        }        
+            j = new Juego(discos)
+        }
     }
     else{
         j.limpiar()
-        j = new Juego(discos) 
+        j = new Juego(discos)
     }
 }
-var j = new Juego(cantidadFichas)
+
+var j = new Juego(cantidadFichas);
+
+function mostrarInstrucciones(){
+    const instructions = "Instrucciones: \nPara jugar debes hacer click en el disco que deseas mover y " +
+    "luego hacer click en la columna a donde quieres pasar el disco. Recuerda que no puedes colocar un disco grande sobre uno pequeño " +
+    "y que para mover un disco, debes de quitar primero los discos que tiene sobre él";
+    swal(instructions);
+}
+
+function mostrarDatos() {
+    swal("Nombre: César Reginaldo Tzoc Alvarado \nCarnet: 201430927");
+}
